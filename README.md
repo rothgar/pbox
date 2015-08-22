@@ -63,9 +63,9 @@ Uses Fedora 22 image provided by [boxcutter](https://github.com/boxcutter/fedora
 
 ### ToDo
 
- [] Make cli easier (wrapper script)
- [] Make gui launcher better
- [] Put shortcut to shutdown VM
- [] Create smaller base image
- [] Change Firefox homepage
- [] Allow profile syncing from host
+ - [] Make cli easier (wrapper script)
+ - [] Make gui launcher better
+ - [] Put shortcut to shutdown VM
+ - [] Create smaller base image
+ - [] Change Firefox homepage
+ - [] Allow profile syncing from host
