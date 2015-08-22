@@ -30,6 +30,10 @@
       lineinfile: dest=/etc/lxdm/lxdm.conf regexp='^# autologin.*'
         line='autologin=vagrant'
       
+    - name: disable screensaver
+      lineinfile: dest=/etc/xdg/lxsession/LXDE/autostart regexp='^@xscreensaver.*'
+        state=absent
+      
     - name: create some directories
       file: path=/home/vagrant/.config/lxsession/LXDE state=directory
         recurse=yes owner=vagrant group=vagrant mode=0700
@@ -49,6 +53,3 @@
     - name: copy panel config
       copy: dest=/home/vagrant/.config/lxpanel/LXDE/panels/panel
         src=panel owner=vagrant group=vagrant
-
-    - name: reboot system
-      command: /usr/sbin/reboot
