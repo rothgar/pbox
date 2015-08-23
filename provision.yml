@@ -9,8 +9,6 @@
     - name: install deps
       dnf: name={{ item }} state=present
       with_items:
-        - gcc
-        - kernel-headers
         - firefox
         - "@lxde-desktop-environment"
         - flash-plugin
@@ -19,6 +17,10 @@
       dnf: name={{ item }} state=absent
       with_items:
         - clipit
+
+    - name: blacklist kernel updates
+      lineinfile: dest=/etc/yum.conf line='exclude=kernel*'
+        state=present
 
     - name: update system
       dnf: name=* state=latest
