@@ -6,6 +6,10 @@
       dnf: name=http://linuxdownload.adobe.com/adobe-release/adobe-release-x86_64-1.0-1.noarch.rpm
         state=present
 
+    - name: blacklist kernel updates
+      lineinfile: dest=/etc/dnf/dnf.conf line='exclude=kernel*'
+        state=present
+
     - name: install deps
       dnf: name={{ item }} state=present
       with_items:
@@ -17,10 +21,8 @@
       dnf: name={{ item }} state=absent
       with_items:
         - clipit
-
-    - name: blacklist kernel updates
-      lineinfile: dest=/etc/yum.conf line='exclude=kernel*'
-        state=present
+        - inital-setup
+        - initial-setup-gui
 
     - name: update system
       dnf: name=* state=latest
