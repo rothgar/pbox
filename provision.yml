@@ -13,6 +13,8 @@
     - name: install deps
       dnf: name={{ item }} state=present
       with_items:
+        - gcc
+        - kernel-headers
         - firefox
         - "@lxde-desktop-environment"
         - flash-plugin
@@ -21,7 +23,7 @@
       dnf: name={{ item }} state=absent
       with_items:
         - clipit
-        - inital-setup
+        - initial-setup
         - initial-setup-gui
 
     - name: update system
