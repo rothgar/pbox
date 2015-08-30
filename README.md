@@ -8,7 +8,7 @@ Run a gui program inside a fully contained VM
 Runs a contained gui application inside a Linux VM and integrates with your 
 desktop.
 
-![pbox](/images/header.jpg?raw=true)
+![pbox](/images/banner.png?raw=true)
 
 Runs on any OS (Windows, OS X, Linux) using multiple hypervisors (VirtualBox, 
 VMware, Parallels).
@@ -44,7 +44,7 @@ installed, the system is updated, and the user is configured.*
 To switch to seemless mode you can select the view menu -> seemless mode 
 (requires virtualbox 5.0.x)
 
-![Seemless](/images/seemless-mode.jpg?raw=true)
+![Seemless](/images/seemless_mode.png?raw=true)
 
 When you are done using pbox you can shut down the VM by going into the folder 
 you cloned this repository and running `vagrant halt`
